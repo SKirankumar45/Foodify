@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Items</title>
+</head>
+<body>
+    <h2>Add Menu Items</h2>
+    <form method="post" action="{% url 'update_menu' restaurant.id %}">
+         {% csrf_token %}
+        <label for="name">Item Name:</label>
+        <input type="text" name="name" id="name" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description"></textarea>
+        <br>
+        <label for="price">Price:</label>
+        <input type="number" name="price" id="price" required>
+        <br>
+        <label for="isVeg">is Veg:</label>
+        <input type="checkbox" name="is_veg" id="isVeg">
+          <br>
+        <label for="picture">Picture URL:</label>
+        <input type="url" name="picture" id="picture">  
+        <button type="submit">Add Item</button>
+    </form>
+
+    <h1>Menu for {{ restaurant.name }}</h1>
+    <h3>Cuisine: {{ restaurant.cuisine }}</h3>
+    <img src="{{ restaurant.pictureurl }}" alt="{{ restaurant.name }}" width="200">
+
+    <h2>Menu Items</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Veg/Non-Veg</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in itemList %}
+            <tr>
+                <td>
+                    <img src="{{ item.picture }}" alt="{{ item.name }}" width="100">
+                </td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.price }}</td>
+                <td>
+                    {% if item.is_veg %}
+                        Veg
+                    {% else %}
+                        Non-Veg
+                    {% endif %}
+                </td> 
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No menu items yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

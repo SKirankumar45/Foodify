@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update restaurant</title>
+</head>
+<body>
+    <form method="post" action="{% url 'update_restaurant' restaurant.id %}">
+        {% csrf_token %}
+        <label for= "name">Restaurant Name:</label>
+        <input type="text" name="name" value="{{restaurant.name}}">
+        <br>
+
+        <label for="pictureurl">Picture:</label>
+        <input type="url" name="pictureurl" value="{{restaurant.pictureurl}}"><br>
+        
+        <label for="cuisine">Cuisine:</label>
+        <input type="text" name="cuisine" value="{{restaurant.cuisine}}"><br>
+
+        <label for="rating">Rating:
+        </label>
+        <input type="number" name="rating" value="{{restaurant.rating}}" min="0" max="5" step="0.1">
+        <br>
+        <button type="submit">Update restaurant</button>
+    </form>
+</body>
+</html>

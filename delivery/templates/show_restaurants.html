@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants List</title>
+</head>
+<body>
+    <h2>All Restaurants</h2>
+    <!-- {{restaurants}} -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Picture</th>
+                <th>Cuisine</th>
+                <th>Rating</th>
+                <th>Other Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for restaurant in restaurants %}
+            <tr>
+                <td>{{restaurant.name}}</td>
+                <td><img src="{{restaurant.pictureurl}}" alt="{{restaurant.name}}" width="200px" height="150px"> </td>
+                <td>{{restaurant.cuisine}}</td>
+                <td>{{restaurant.rating}}</td>
+                <td>
+                    <a href="{% url 'open_update_restaurant' restaurant.id%}">Update Restaurant</a><br>
+                    <form method="POST" action="{% url 'delete_restaurant' restaurant.id %}">
+                    {% csrf_token %}
+                        <button type="submit">Delete Restaurant</button>
+                    </form>
+                    <a href="{% url 'open_update_menu' restaurant.id %}">Update Menu</a>
+                </td>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

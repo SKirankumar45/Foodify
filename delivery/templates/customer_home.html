@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer home</title>
+</head>
+<body>
+    <h2>Welcome {{username}}</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Picture</th>
+                <th>Cuisine</th>
+                <th>Rating</th>
+                <th>Other Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for restaurant in restaurants %}
+            <tr>
+                <td>{{restaurant.name}}</td>
+                <td><img src="{{restaurant.pictureurl}}" alt="{{restaurant.name}}" width="200px" height="150px"> </td>
+                <td>{{restaurant.cuisine}}</td>
+                <td>{{restaurant.rating}}</td>
+                <td>
+                    <a href="{% url 'view_menu' restaurant.id username %}">View Menu</a>
+                </td>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
