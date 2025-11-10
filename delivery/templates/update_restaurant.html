@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'update_res.css'%}">
     <title>update restaurant</title>
 </head>
 <body>
+    <h1>Update Restaurant</h1>
     <form method="post" action="{% url 'update_restaurant' restaurant.id %}">
         {% csrf_token %}
         <label for= "name">Restaurant Name:</label>
-        <input type="text" name="name" value="{{restaurant.name}}">
+        <input type="text" name="name" value="{{restaurant.name}}"required>
         <br>
 
         <label for="pictureurl">Picture:</label>
-        <input type="url" name="pictureurl" value="{{restaurant.pictureurl}}"><br>
+        <input type="url" name="pictureurl" value="{{restaurant.pictureurl}}" required><br>
         
         <label for="cuisine">Cuisine:</label>
-        <input type="text" name="cuisine" value="{{restaurant.cuisine}}"><br>
+        <input type="text" name="cuisine" value="{{restaurant.cuisine}}" required><br>
 
         <label for="rating">Rating:
         </label>
-        <input type="number" name="rating" value="{{restaurant.rating}}" min="0" max="5" step="0.1">
+        <input type="number" name="rating" value="{{restaurant.rating}}" min="0" max="5" step="0.1" required>
         <br>
         <button type="submit">Update restaurant</button>
     </form>

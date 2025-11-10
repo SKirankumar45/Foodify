@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'customer_home.css'%}" >
+    <title>Menu items</title>
 </head>
 <body>
+        <h1>Welcome {{username}}</h1>
+        <a href="{% url 'show_cart' username %}" id="cartlink">go to cart</a>
       <h1>Menu for {{ restaurant.name }}</h1>
     <h3>Cuisine: {{ restaurant.cuisine }}</h3>
-    <img src="{{ restaurant.pictureurl }}" alt="{{ restaurant.name }}" width="200">
+    <img src="{{ restaurant.pictureurl }}" alt="{{ restaurant.name }}" id="res_pic">
 
     <h2>Menu Items</h2>
     <table border="1">
@@ -26,7 +30,7 @@
             {% for item in itemList %}
             <tr>
                 <td>
-                    <img src="{{ item.picture }}" alt="{{ item.name }}" width="100">
+                    <img src="{{ item.picture }}" alt="{{ item.name }}" width="250px" height="150px">
                 </td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.description }}</td>
@@ -39,7 +43,7 @@
                     {% endif %}
                 </td>
                 <td>
-                    <a href="#">Add to cart</a>
+                    <a href="{% url 'add_to_cart' item.id  username%}" id="addCart">Add to cart</a>
                 </td> 
             </tr>
             {% empty %}
@@ -49,5 +53,14 @@
             {% endfor %}
         </tbody>
     </table>
+    <script>
+        const addCart = document.getElementById("addCart");
+        addCart.addEventListener("click", function(){
+            alert("Item added to cart!, check your cart for details.");
+            addCart.textContent = "Added";
+            addCart.style.pointerEvents = "none";
+            addCart.style.color = "gray";
+        })
+    </script>
 </body>
 </html>

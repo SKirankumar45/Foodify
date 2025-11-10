@@ -1,0 +1,75 @@
+body{
+    background-image: linear-gradient(to bottom right, rgb(252, 242, 236), rgb(255, 192, 149));
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 110vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    border-radius: 40px;
+    width: 300px;
+    padding: 30px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color:rgb(255, 245, 237);
+    color: rgb(78, 65, 51);
+}
+
+input{
+    width: 90%;
+    padding: 10px;
+    font-size: 1.1em;
+    margin: 10px;
+    border-radius: 40px;
+    border: none;
+    background-color: rgb(224, 218, 208);
+}
+
+h3{
+    text-align: center;
+    width: 50%;
+    margin: 20px auto;
+    font-size: 2em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(74, 65, 55);
+}
+
+label{
+    position: relative;
+    left: 0;
+    font-size: 1.2em;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(66, 66, 66);
+    font-weight: 500;
+}
+
+button{
+    width: 90%;
+    padding: 8px;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: 200;
+    font-size: 1.2em;
+    border: none;
+    background-color: #fc9a06d0;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #fc9a06;
+}
+
+textarea{
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    font-size: 1.1em;
+    width: 90%;
+    background-color: rgb(224, 218, 208);
+}

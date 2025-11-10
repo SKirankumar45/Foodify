@@ -1,0 +1,50 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: darkslategrey;
+}
+h2{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+form{
+    width: 50%;
+    margin: 20px auto;
+    background-color: rgb(242, 240, 255);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    background-color: rgb(196, 196, 196);
+    color: rgb(73, 73, 73);
+    border: none;
+}
+
+label{
+    font-size: 1.5em;
+}
+
+button{
+    padding: 10px;
+    background-color: rgb(124, 116, 4);
+    color: aliceblue;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: darkgoldenrod;
+}

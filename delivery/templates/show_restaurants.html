@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'customer_home.css'%}">
     <title>Restaurants List</title>
 </head>
 <body>
@@ -27,9 +29,11 @@
                 <td>{{restaurant.rating}}</td>
                 <td>
                     <a href="{% url 'open_update_restaurant' restaurant.id%}">Update Restaurant</a><br>
-                    <form method="POST" action="{% url 'delete_restaurant' restaurant.id %}">
+                    <form method="POST" action="{% url 'delete_restaurant' restaurant.id %}" id="form">
                     {% csrf_token %}
-                        <button type="submit">Delete Restaurant</button>
+                        <button id="submitbtn" type="submit" style="border: none; background-color: darkblue; 
+                        color: aliceblue; padding: 10px; margin: 10px; 
+                        font-size: 1.2em; border-radius: 10px; cursor: pointer;">Delete Restaurant</button>
                     </form>
                     <a href="{% url 'open_update_menu' restaurant.id %}">Update Menu</a>
                 </td>

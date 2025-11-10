@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'update_menu.css'%}">
     <title>Menu Items</title>
 </head>
 <body>
@@ -19,11 +21,11 @@
         <input type="number" name="price" id="price" required>
         <br>
         <label for="isVeg">is Veg:</label>
-        <input type="checkbox" name="is_veg" id="isVeg">
+        <input type="checkbox" name="is_veg" id="isVeg" id="checkbox">
           <br>
         <label for="picture">Picture URL:</label>
         <input type="url" name="picture" id="picture">  
-        <button type="submit">Add Item</button>
+        <button type="submit" class="my-button">Add Item</button>
     </form>
 
     <h1>Menu for {{ restaurant.name }}</h1>

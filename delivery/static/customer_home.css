@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+}
+
+table{
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: none;
+    
+}
+
+h2,p{
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+td{
+    text-align: center;
+    border-collapse: collapse;
+    border: none;
+    width: 200px;
+}
+
+tr{
+    text-align: center;
+    border-collapse: collapse;
+    border: none;
+    transition: font-size 0.3s ease;
+    border-radius: 50px;
+}
+
+tr:hover td{
+    background-color: rgb(255, 222, 156);
+    font-size: 1.2em;
+}
+
+img{
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+    color:darkslateblue;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+thead th{
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 30px;
+    border-color: rgb(255, 200, 133);
+    background-color: rgb(255, 200, 133);
+}
+
+
+
+
+h1,h3{
+    width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#cartlink{
+    position: absolute;
+    right: 5%;
+    top: 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: darkslateblue;
+    background-color: rgb(194, 223, 255);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#res_pic{
+    border-radius: 20px;
+    height: 300px;
+    width: 400px;
+    margin: 10px auto;
+    position: relative;
+    left: 37%;
+}
+
+#checkoutbtn{
+    width: 200px;
+    position: relative;
+    left: 75%;
+    margin: 20px;
+    padding: 15px;
+    font-size: 1.3em;
+    background-color: rgb(58, 55, 74);
+    border: none;
+    border-radius: 20px;
+    color: rgb(235, 232, 254);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#checkoutbtn:hover{
+    background-color: rgb(69, 61, 111);;
+}

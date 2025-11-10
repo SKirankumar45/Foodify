@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'customer_home.css'%}" >
+    <title>Your Cart</title>
+</head>
+<body>
+    <h2>{{username}}</h2>
+    <p>Your cart details...</p>
+    <!-- show current menu -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Item Image</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%  for item in itemList %}
+                <tr>
+                    <td>
+                        <img src="{{ item.picture }}" width="200px" height="100px">
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <h2>Total price : {{total_price}}</h2>
+        <form action="{% url 'checkout' username %}">
+            <input type="submit" value="CHECK OUT" id="checkoutbtn"/>
+        </form>
+    </table>
+</body>
+</html>

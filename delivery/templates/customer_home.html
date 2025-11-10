@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'customer_home.css'%}" >
     <title>Customer home</title>
 </head>
 <body>
-    <h2>Welcome {{username}}</h2>
+    <h2>Welcome {{username}}!</h2>
+    <p><strong>Curated Cravings, Delivered.</strong>We don't just deliver food; we deliver an experience.
+    Explore our hand picked selection of top-rated restaurants known for quality and consistency. <strong><br>Elevate your dinner plans.</strong></p>
     <table border="1">
         <thead>
             <tr>
