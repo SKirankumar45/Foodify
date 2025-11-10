@@ -1,0 +1,23 @@
+# Core Framework
+Django==5.0.3
+
+# Razorpay Payment Integration
+razorpay==1.4.2
+
+# Database (if using PostgreSQL; comment out if using SQLite)
+psycopg2==2.9.9
+
+# For environment variable management
+python-decouple==3.8
+
+# Static files management (optional but recommended for production)
+whitenoise==6.6.0
+
+# Image/file handling (for restaurant images, menus, etc.)
+Pillow==10.0.1
+
+# Gunicorn (for deployment on platforms like Render, Railway, or Heroku)
+gunicorn==22.0.0
+
+# Django Extensions (optional – for admin and debugging utilities)
+django-extensions==3.2.3
