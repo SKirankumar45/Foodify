@@ -23,5 +23,7 @@
         "src": "/(.*)",
         "dest": "foodify/wsgi.py"
       }
-    ]
+    ],
+    "installCommand": "python3 -m pip install -r requirements.txt",
+  "buildCommand": "./build_files.sh"
   }
