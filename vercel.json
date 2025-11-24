@@ -1,14 +1,27 @@
 {
-    "builds": [{
+    "version": 2,
+    "builds": [
+      {
         "src": "foodify/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "foodify/wsgi.py"
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
         }
+      }
     ],
-    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput"
-}
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "foodify/wsgi.py"
+      }
+    ]
+  }
